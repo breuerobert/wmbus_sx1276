@@ -40,7 +40,20 @@ Then in logs you will have trace with driver name and ID:
 - meter type (driver) and ID are known, but you don't know how to add sensors (map decoded data to sensor)
 
 ```yaml
+time:
+  - platform: sntp
+    id: time_sntp
+
+spi:
+  clk_pin: GPIO05
+  mosi_pin: GPIO27
+  miso_pin: GPIO19
+
 wmbus:
+  cs_pin:   GPIO18
+  rst_pin:  GPIO14
+  dio0_pin: GPIO26
+
   all_drivers: False
   log_all: False
 
@@ -73,7 +86,20 @@ From decoded JSON:
 find interesting data (in that case total_m3), split it into field (total) and unit (m3) and create sensor in YAML. In YAML config please use units from HA (ie. "m³" not "m3", etc).
 
 ```yaml
+time:
+  - platform: sntp
+    id: time_sntp
+
+spi:
+  clk_pin: GPIO05
+  mosi_pin: GPIO27
+  miso_pin: GPIO19
+
 wmbus:
+  cs_pin:   GPIO18
+  rst_pin:  GPIO14
+  dio0_pin: GPIO26
+
   all_drivers: False
   log_all: False
 
@@ -111,20 +137,33 @@ external_components:
     refresh: 0d
     components: [ wmbus ]
 
+time:
+  - platform: sntp
+    id: time_sntp
+
+spi:
+  clk_pin: GPIO05
+  mosi_pin: GPIO27
+  miso_pin: GPIO19
+
 wmbus:
-  mosi_pin: GPIO13
-  miso_pin: GPIO5
-  clk_pin:  GPIO2
-  cs_pin:   GPIO14
-  gdo0_pin: GPIO15
-  gdo2_pin: GPIO16
+  cs_pin:   GPIO18
+  rst_pin:  GPIO14
+  dio0_pin: GPIO26
+
+  bitrate: 100000 #default
+  bandwidth: 200_0kHz #default
+  frequency: 868950000 #default
+  preamble_polarity: 0x55 #default
+  preamble_detect: 2 #default
+  preamble_errors: 10 #default
+  sync_value: [0x54, 0x3D] #default
+  deviation: 50000 #default
 
   led_pin: GPIO0
   led_blink_time: "1s"
 
-  frequency: 868.950
   all_drivers: False
-  sync_mode: True
   log_all: True
 
   mqtt:
@@ -282,4 +321,3 @@ Supported drivers: almost all from wmbusmeters version 1.17.1 (without drivers f
 ## 3. Author & License
 
 breuerobert, GPL, 2025
-
