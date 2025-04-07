@@ -229,10 +229,11 @@ async def to_code(config):
                             safe_ip(conf[CONF_BROKER]),
                             conf[CONF_PORT],
                             conf[CONF_RETAIN]))
-        cg.add(var.set_mqtt_raw(config[CONF_WMBUS_MQTT_RAW]))
-        cg.add(var.set_mqtt_raw_prefix(config[CONF_WMBUS_MQTT_RAW_PREFIX]))
-        cg.add(var.set_mqtt_raw_format(config[CONF_WMBUS_MQTT_RAW_FORMAT]))
-        cg.add(var.set_mqtt_raw_parsed(config[CONF_WMBUS_MQTT_RAW_PARSED]))
+
+    cg.add(var.set_mqtt_raw(config[CONF_WMBUS_MQTT_RAW]))
+    cg.add(var.set_mqtt_raw_prefix(config[CONF_WMBUS_MQTT_RAW_PREFIX]))
+    cg.add(var.set_mqtt_raw_format(config[CONF_WMBUS_MQTT_RAW_FORMAT]))
+    cg.add(var.set_mqtt_raw_parsed(config[CONF_WMBUS_MQTT_RAW_PARSED]))
 
     cg.add(var.set_log_all(config[CONF_LOG_ALL]))
 
