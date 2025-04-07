@@ -35,7 +35,7 @@ wmbusgw:
 
 ## 2. `wmbusmeters` addon configuration
 After instalation please go to addon configuration and enable port forwarding by clicking `Show disabled ports`:
-![](https://github.com/breuerobert/esphome-components/blob/main/docs/disabled_ports.png)
+![](https://github.com/breuerobert/wmbus_sx1276/blob/main/docs/disabled_ports.png)
 On right side please write port number from `wmbusgw` configuration (in this example *7011*).
 
 
@@ -95,6 +95,6 @@ mqtt:
 ```
 
 You can also enable and use MQTT auto discovery feature (very limited).
-![](https://github.com/breuerobert/esphome-components/blob/main/docs/mqtt_discovery.png)
+![](https://github.com/breuerobert/wmbus_sx1276/blob/main/docs/mqtt_discovery.png)
 
 And check discovered metters in MQTT integration.

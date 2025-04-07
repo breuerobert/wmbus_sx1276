@@ -12,7 +12,7 @@ with external components and add this to your `.yaml` definition:
 
 ```yaml
 external_components:
-  - source: github://breuerobert/esphome-components@main
+  - source: github://breuerobert/wmbus_sx1276@main
 ```
 
 ## 2. Components
@@ -21,7 +21,7 @@ external_components:
 
 Component to receive wMBus frame (via SX1276), create HA sensor and send decoded value.
 You can also use this component with wmbusmeters HA addon:
-https://github.com/breuerobert/esphome-components/blob/main/docs/wmbus.md
+https://github.com/breuerobert/wmbus_sx1276/blob/main/docs/wmbus.md
 
 #### 2.1.1. Fast start
 
@@ -68,7 +68,7 @@ You can decode that telegram on [wmbusmeters](https://wmbusmeters.org/analyze/4E
 
 - everything is known, let's find field and unit
 From decoded JSON:
-![decoded JSON](https://github.com/breuerobert/esphome-components/blob/main/docs/decoded_telegram.png)
+![decoded JSON](https://github.com/breuerobert/wmbus_sx1276/blob/main/docs/decoded_telegram.png)
 
 find interesting data (in that case total_m3), split it into field (total) and unit (m3) and create sensor in YAML. In YAML config please use units from HA (ie. "m³" not "m3", etc).
 
@@ -107,7 +107,7 @@ time:
     id: time_sntp
 
 external_components:
-  - source: github://breuerobert/esphome-components@main
+  - source: github://breuerobert/wmbus_sx1276@main
     refresh: 0d
     components: [ wmbus ]
 
