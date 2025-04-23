@@ -166,9 +166,9 @@ void SX127x::restart_receiver() {
   // If AFC is enabled and/or Frf was changed, restart with PLL lock.
   rx_config |= RESTART_RX_WITH_PLL_LOCK;
   this->write_register_(REG_RX_CONFIG, rx_config);
-  ESP_LOGV(TAG, "Restart command sent (with_pll_lock=%d)", with_pll_lock);
 
   this->set_mode_(MODE_RX);
+
   ESP_LOGV(TAG, "Receiver restarted successfully.");
 }
 
