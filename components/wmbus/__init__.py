@@ -1,7 +1,7 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome import pins
-from esphome.log import Fore, color
+from esphome.log import AnsiFore, color
 from esphome.components import time
 from esphome.components import mqtt
 from esphome.components import wifi
