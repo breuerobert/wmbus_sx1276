@@ -184,7 +184,7 @@ async def to_code(config):
     await cg.register_component(var_adv, {})
 
     if (config.get(CONF_MQTT_ID) and config.get(CONF_MQTT)):
-        print(color(Fore.RED, "Only one MQTT can be configured!"))
+        print(color(AnsiFore.RED, "Only one MQTT can be configured!"))
         exit()
 
     var = cg.new_Pvariable(config[CONF_ID])
